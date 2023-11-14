@@ -36,3 +36,19 @@ let displayedWord = [];
 let guesses = 0;
 let maxGuesses = 5;
 
+startBtn.addEventListener('click', function(e){
+    //We will call our API function
+    ApiCall();
+})
+
+function ApiCall(){
+    //We initiate the fetch request from our random word api
+    fetch('https://random-word-api.herokuapp.com/word')
+    .then((response) => {
+        //We will use the .json() to parse the response into json data
+        return response.json();
+    })
+        .then((data) => {
+            console.log(data)
+        })
+}
