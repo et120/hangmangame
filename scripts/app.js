@@ -26,6 +26,13 @@ let hangMan = document.getElementById("hangMan");
 let userInput = document.getElementById("userInput");
 
 //Variables
+//randomWord will be for our API call
+//wrongGuess will be the user's incorrect input
+//displayedWork will be for their correct input
 let randomWord = "";
 let wrongGuess = "";
 let displayedWord = [];
+
+let guesses = 0;
+let maxGuesses = 5;
+
