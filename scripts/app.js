@@ -24,3 +24,8 @@ let secretWord = document.getElementById("secretWord");
 let wrongGuesses = document.getElementById("wrongGuesses");
 let hangMan = document.getElementById("hangMan");
 let userInput = document.getElementById("userInput");
+
+//Variables
+let randomWord = "";
+let wrongGuess = "";
+let displayedWord = [];
