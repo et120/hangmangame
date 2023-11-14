@@ -49,6 +49,25 @@ function ApiCall(){
         return response.json();
     })
         .then((data) => {
-            console.log(data)
+            console.log(data[0]);
+            startGame(data[0]);
         })
+}
+
+function startGame(word){
+    randomWord = word;
+
+    //Now we have to change our displayed word to have _ for the length of our random word
+
+    for (let i = 0; i < randomWord.length; i++){
+        displayedWord[i] = "_";
+    }
+    //We will update our "game State"
+    updateGameState();
+}
+
+function updateGameState(){
+    secretWord.textContent = displayedWord.join(" ");
+
+    hangMan.textContent = `Guesses left ${guesses} / ${maxGuesses}`;
 }
