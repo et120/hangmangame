@@ -55,6 +55,7 @@ function ApiCall(){
 }
 
 function startGame(word){
+    displayedWord = [];
     randomWord = word;
 
     //Now we have to change our displayed word to have _ for the length of our random word
@@ -64,6 +65,8 @@ function startGame(word){
     }
     //We will update our "game State"
     updateGameState();
+
+    userInput.readOnly = false;
 }
 
 function updateGameState(){
