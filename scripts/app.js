@@ -90,3 +90,39 @@ function updateGameState(){
 
     hangMan.textContent = `Guesses left ${guesses} / ${maxGuesses}`;
 }
+
+userInput.addEventListener('keydown', function(event){
+    if(event.key === "Enter"){
+        let guess = userInput.value.toLowerCase();
+        //Check if the user's guess is included in the secret word
+        if(randomWord.includes(guess)){
+            //now that we know that guess is included we have to figure out at what index
+            for(let i = 0; i < randomWord.length; i++){
+
+                if(randomWord[i] === guess){
+                    displayedWord[i] = guess;
+                }
+            }
+        }else {
+            wrongGuess += guess;
+            wrongGuesses.textContent = wrongGuess;
+            guesses++;
+        }
+
+        updateGameState();
+        userInput.value = "";
+        gameEnd();
+    }
+});
+
+function gameEnd(){
+    //check if the guesses equals max guesses LOSE
+    //check if random word equals displayedWord WIN
+    if(guesses === maxGuesses){
+        alert(`You lose your word was ${randomWord}`);
+        resetGame();
+    } else if(displayedWord.join("") === randomWord){
+        alert("Yay you won you've guessed: " + randomWord);
+        resetGame();
+    }
+}
