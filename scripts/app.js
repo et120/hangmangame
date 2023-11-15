@@ -36,10 +36,26 @@ let displayedWord = [];
 let guesses = 0;
 let maxGuesses = 5;
 
-startBtn.addEventListener('click', function(e){
+startBtn.addEventListener('click', function(){
     //We will call our API function
     ApiCall();
 })
+
+restartBtn.addEventListener('click', function(){
+    resetGame();
+})
+
+function resetGame() {
+    randomWord = "";
+    wrongGuess = "";
+    displayedWord = [];
+    guesses = 0;
+    wrongGuesses.textContent = "";
+    secretWord.textContent = "[Secret Word]";
+    hangMan.textContent = "Hangman / Guesses left";
+    userInput.readOnly = true;
+    userInput.value = "";
+}
 
 function ApiCall(){
     //We initiate the fetch request from our random word api
