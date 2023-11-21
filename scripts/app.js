@@ -12,7 +12,7 @@
 //Replay button
 //SecretWord
 //Wrong guesses
-//Hangman
+//Hangman (flower design?)
 //Guess / Input
 
 //ID Section
